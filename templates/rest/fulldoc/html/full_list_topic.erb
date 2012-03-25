@@ -1,0 +1,14 @@
+<li><a href="<%= url_for('_index.html') %>">Index</a></li>
+<% n = 1 %>
+<% @topics.sort_by {|s,o| s }.each do |topic,objects| %>
+  <li class="r<%= n %>"><%= topic%></li>
+  <% unless objects.empty? %>
+    <% objects.each do |object| %>
+      <% object.tags("url").each do |url_tag| %>
+        <li class="r<%= n %>"><%= linkify(object, url_tag.text) %></li>
+      <% end %>
+    <% end%>
+  <% end %>
+  <% n = n == 2 ? 1 : 2 %>
+<% end %>
+
