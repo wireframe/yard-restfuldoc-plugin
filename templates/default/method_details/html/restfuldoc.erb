@@ -1,0 +1,25 @@
+<% if object.tags(:url).any? %>
+<div class="restfuldoc">
+  <span>URL: </span><strong><%= object.tags(:url).first.text %></strong>
+  <span>HTTP Method: </span><strong><%= object.tags(:url).first.type %></strong>
+
+  <% puts object.tags(:parameter).inspect %>
+  <% if object.tags(:parameter).any? %>
+    <h3>Parameters</h3>
+    <ul class="parameters">
+    <% object.tags(:parameter).each do |tag| %>
+      <li>
+        <strong><%= tag.name %></strong>
+        <i>[<%= tag.type %>]</i>
+        <%= tag.text %>
+      </li>
+    <% end %>
+    </ul>
+  <% end %>
+
+  <h3>Examples</h3>
+  <pre>
+$ curl -X<%= object.tags(:url).first.type %> http://some.host<%= object.tags(:url).first.text %>
+  </pre>
+</div>
+<% end %>
