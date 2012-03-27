@@ -1,9 +1,12 @@
 <% if object.tags(:url).any? %>
 <div class="restfuldoc">
-  <span>URL: </span><strong><%= object.tags(:url).first.text %></strong>
-  <span>HTTP Method: </span><strong><%= object.tags(:url).first.type %></strong>
+  <div>
+    <span>URL: </span><strong><%= object.tags(:url).first.text %></strong>
+  </div>
+  <div>
+    <span>HTTP Method: </span><strong><%= object.tags(:url).first.type %></strong>
+  </div>
 
-  <% puts object.tags(:parameter).inspect %>
   <% if object.tags(:parameter).any? %>
     <h3>Parameters</h3>
     <ul class="parameters">

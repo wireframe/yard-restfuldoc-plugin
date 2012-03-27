@@ -1,4 +1,4 @@
 def init
   super
-  sections.push :restfuldoc
+  sections.last.place(:restfuldoc).before(:source)
 end
