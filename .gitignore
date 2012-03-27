@@ -1,4 +1,42 @@
-*.gem
+# yard temp files
+.yardoc
+public/api
+
+# rails temp files
 .bundle
-Gemfile.lock
-pkg/*
+db/*.sqlite3
+db/*.sqlite3-journal
+log
+log/*.log
+tmp/
+
+# paperclip files
+public/system
+
+# mac temp files
+.DS_Store
+
+# git temp files
+*.orig
+
+# vim temp files
+.swp
+tags
+*.tags
+
+# sass generated files
+.sass-cache
+
+# jammit generated files
+public/assets
+
+# test output
+spec/reports/
+.jhw-cache
+jasmine.html
+
+# node files
+node_modules
+
+# yard files
+.yardoc
