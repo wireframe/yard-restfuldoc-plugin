@@ -7,20 +7,7 @@
     <span>HTTP Method: </span><strong><%= object.tags(:url).first.type %></strong>
   </div>
 
-  <% if object.tags(:parameter).any? %>
-    <h3>Parameters</h3>
-    <ul class="parameters">
-    <% object.tags(:parameter).each do |tag| %>
-      <li>
-        <strong><%= tag.name %></strong>
-        <i>[<%= tag.type %>]</i>
-        <%= tag.text %>
-      </li>
-    <% end %>
-    </ul>
-  <% end %>
-
-  <h3>Examples</h3>
+  <h3>Examples:</h3>
   <pre>
 $ curl -X<%= object.tags(:url).first.type %> http://some.host<%= object.tags(:url).first.text %>
   </pre>

@@ -4,8 +4,10 @@ class FooController
   #
   # @url [GET] /foos
   #
-  # @parameter [String] bar only return objects with certain properties
+  # @param [String] bar only return objects with certain properties
   # @parameter [Integer] baz this does something too
+  #
+  # @return 401 if unauthorized
   def index
   end
 
