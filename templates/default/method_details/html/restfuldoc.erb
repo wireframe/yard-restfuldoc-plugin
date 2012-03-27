@@ -9,7 +9,7 @@
 
   <h3>Examples:</h3>
   <pre>
-$ curl -X<%= object.tags(:url).first.type %> http://some.host<%= object.tags(:url).first.text %>
+$ curl -X <%= object.tags(:url).first.type %> -v <%= ENV['RESTFULDOC_HOST'] %><%= object.tags(:url).first.text %>
   </pre>
 </div>
 <% end %>
